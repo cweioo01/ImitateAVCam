@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0a-LL-f2q" userLabel="Preview" customClass="PreviewView">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live Phone Mode : 开" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGh-Ma-bV5">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.17109604989999999" blue="0.4272727677" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQO-aC-wMf">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1f7-kU-OJH">
+                                <segments>
+                                    <segment title="拍照模式"/>
+                                    <segment title="摄像模式"/>
+                                </segments>
+                                <connections>
+                                    <action selector="toggleCaptureMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="PzG-tW-m6I"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XkX-R8-daM">
+                                <state key="normal" title="开启录像"/>
+                                <connections>
+                                    <action selector="recoreMoveFile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DpO-Eu-Wru"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7D-45-shL">
+                                <state key="normal" title="拍照"/>
+                                <connections>
+                                    <action selector="capturePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LN2-Vh-pnd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVb-q7-sNM">
+                                <state key="normal" title="切换摄像头"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XkX-R8-daM" secondAttribute="bottom" constant="20" id="361-T2-lvL"/>
+                            <constraint firstItem="a0a-LL-f2q" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BEg-v2-c4D"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1f7-kU-OJH" secondAttribute="bottom" constant="60" id="DtX-pi-6q9"/>
+                            <constraint firstItem="1f7-kU-OJH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IOb-oZ-176"/>
+                            <constraint firstItem="Q7D-45-shL" firstAttribute="centerY" secondItem="XkX-R8-daM" secondAttribute="centerY" id="Pec-jq-Gpl"/>
+                            <constraint firstAttribute="trailing" secondItem="a0a-LL-f2q" secondAttribute="trailing" id="Qau-OB-4TV"/>
+                            <constraint firstItem="dQO-aC-wMf" firstAttribute="top" secondItem="UGh-Ma-bV5" secondAttribute="bottom" constant="20" id="S8R-ch-s4a"/>
+                            <constraint firstItem="JVb-q7-sNM" firstAttribute="leading" secondItem="Q7D-45-shL" secondAttribute="trailing" constant="40" id="UKW-Md-9Hd"/>
+                            <constraint firstItem="a0a-LL-f2q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VW6-s2-S9j"/>
+                            <constraint firstItem="dQO-aC-wMf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WpE-ZY-KWY"/>
+                            <constraint firstItem="JVb-q7-sNM" firstAttribute="centerY" secondItem="Q7D-45-shL" secondAttribute="centerY" id="aIn-3b-Nk9"/>
+                            <constraint firstItem="XkX-R8-daM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="aiz-5V-CrM"/>
+                            <constraint firstItem="UGh-Ma-bV5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bBi-sp-TNO"/>
+                            <constraint firstItem="UGh-Ma-bV5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="eu1-EQ-4rm"/>
+                            <constraint firstItem="Q7D-45-shL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kpj-z9-Sd8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="a0a-LL-f2q" secondAttribute="bottom" id="pnx-fP-Qpz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="captureModeSegmentedController" destination="1f7-kU-OJH" id="vNs-J8-kAl"/>
+                        <outlet property="liveLabel" destination="dQO-aC-wMf" id="GZ8-OD-rvD"/>
+                        <outlet property="livePhoneModeLabel" destination="UGh-Ma-bV5" id="eA7-Jb-jFh"/>
+                        <outlet property="photoBtn" destination="Q7D-45-shL" id="uFD-kZ-xK8"/>
+                        <outlet property="previewView" destination="a0a-LL-f2q" id="q3Z-Z1-GLO"/>
+                        <outlet property="recordBtn" destination="XkX-R8-daM" id="Su7-pF-NqF"/>
+                        <outlet property="toggleCameraBtn" destination="JVb-q7-sNM" id="aZ4-2y-dqx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
