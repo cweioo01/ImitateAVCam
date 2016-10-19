@@ -90,7 +90,6 @@ return ;
 PHAssetCreationRequest *createRequest = [PHAssetCreationRequest creationRequestForAsset];
 
 PHAssetResourceCreationOptions *options = [[PHAssetResourceCreationOptions alloc] init];
-```
 options.shouldMoveFile = YES;
 [createRequest addResourceWithType:PHAssetResourceTypeVideo fileURL:outputFileURL options:options];
 
@@ -102,7 +101,7 @@ NSLog(@" 保存move 失败 %@:", error);
 NSLog(@" 保存move 成功");
 }
 }];
-
+```
 
 
 
