@@ -82,9 +82,9 @@ return ;
 }];
 ```
 # move 写入相册
-*　先入在临时ｔｅｍｐ中，
-＊　写入
-＊删除临时temp中的
+*　先写在ｔｅｍｐ中，
+* 再写入相册
+* 删除temp中的(如果存在NSFileManage判断下)
 ```objc
 [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
 PHAssetCreationRequest *createRequest = [PHAssetCreationRequest creationRequestForAsset];
