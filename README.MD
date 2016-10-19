@@ -12,6 +12,7 @@
 
 * NSBlockOperation 添加的第一个block在主线程执行,后加加的block在异步线程执行.
     * 要手动启动
+ ```objc
 NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
 NSLog(@"%@", [NSThread currentThread]);
 }];
@@ -21,9 +22,10 @@ NSLog(@"===%@", [NSThread currentThread]);
 
 }];
 [op start];
+```
+# NSOperationQueue 与主线程和其它线程异步执行.(当maxCurrentcount = 1时,添加的block是串行的)
 
-# NSOperationQueue 全部异步执行.
-
+```ojbc
 NSOperationQueue *queue = [[NSOperationQueue alloc] init];
 [queue addOperationWithBlock:^{
 NSLog(@"queue111===%@", [NSThread currentThread]);
@@ -32,6 +34,7 @@ NSLog(@"queue111===%@", [NSThread currentThread]);
 [queue addOperationWithBlock:^{
 NSLog(@"queue222===%@", [NSThread currentThread]);
 }];
+```
 
 # 不能显示摄像头照到的:等同于没有开启摄像功能
 * 1.没有previewLayer :
@@ -63,6 +66,7 @@ NSLog(@"queue222===%@", [NSThread currentThread]);
 * 创建唯一字串符,用作路径用.
 
 # 写入图片到相册步骤
+```objc
 [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
 PHAssetCreationRequest *creationRequest = [PHAssetCreationRequest creationRequestForAsset];
 [creationRequest addResourceWithType:PHAssetResourceTypePhoto data:self.photoData options:nil];
@@ -76,15 +80,17 @@ self.filishedCaptureCallBackBlock(error);
 return ;
 }
 }];
-
+```
 # move 写入相册
 *　先入在临时ｔｅｍｐ中，
 ＊　写入
 ＊删除临时temp中的
+```objc
 [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
 PHAssetCreationRequest *createRequest = [PHAssetCreationRequest creationRequestForAsset];
 
 PHAssetResourceCreationOptions *options = [[PHAssetResourceCreationOptions alloc] init];
+```
 options.shouldMoveFile = YES;
 [createRequest addResourceWithType:PHAssetResourceTypeVideo fileURL:outputFileURL options:options];
 
