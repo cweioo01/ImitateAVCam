@@ -1,5 +1,6 @@
 
-# 系统自带的,可以在没有window里弹出,可以可直接决定授权状态,不用进设置界面.
+# 系统自带的,可以在没有window(窗口)时弹出,可直接决定授权状态,不用进设置界面.
+```objc
 [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
  if (!granted) {
  weakSelf.authorizationStatus = kAuthorizationStatusDetermined;
@@ -7,7 +8,7 @@
  weakSelf.authorizationStatus = kAuthorizationStatusDenied;
  }
  }];
-
+```
 # operateion
 
 * NSBlockOperation 添加的第一个block在主线程执行,后加加的block在异步线程执行.
